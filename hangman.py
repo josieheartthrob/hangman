@@ -30,7 +30,7 @@ title = r"""====================================================================
 
 ================================================================================"""
 
-def load_words(filename):
+def load_words(filename, sep=' '):
     """Load a random word from word_file
 
     Preconditions:
@@ -44,8 +44,8 @@ def load_words(filename):
         word is a random word in word_file
     """
     with open(filename) as word_file:
-        return word_file.readline().split()
-words = load_words('test_files/words2.txt')
+        return word_file.read().split(sep)
+words = load_words('words.txt', '\n')
 
 def get_menu(options):
     """Get the string representation of a menu from the specified options
